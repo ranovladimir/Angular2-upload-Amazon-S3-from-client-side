@@ -13,7 +13,7 @@ How it's work : The upload form ask for an authorization to upload in your Amazo
 CAUTION : This app run well only if you download also the back-end at https://github.com/ranovladimir/.Net-core-upload-Amazon-S3
 
 
-Usage :
+Usage : To get started, please read the README.txt file in the src
 
 Clone or fork a Angular2 seed project at https://github.com/angular/angular2-seed
 
