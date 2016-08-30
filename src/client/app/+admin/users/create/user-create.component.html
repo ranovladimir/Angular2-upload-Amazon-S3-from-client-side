@@ -1,0 +1,83 @@
+<style>
+  .col-lg-12 {
+    margin-top: 50px;
+  }
+
+  .ng-dirty.ng-invalid {
+    background: red;
+  }
+
+  .ng-touched.ng-invalid {
+    background: #ff6a70;
+  }
+
+  .logo-enterprise{
+    /*margin-top: 20px;*/
+  }
+</style>
+
+<div class="col-lg-12">
+  <h1>Creation de compte Entreprise/Administrateur</h1>
+</div>
+
+<div class="col-lg-6">
+  <form autocomplete="off" novalidate role="form">
+    <div class="form-group">
+      <label>Le numero Siret d'enterprise</label>
+      <input class="form-control" placeholder="ex:480 675 388 00031" name="enterprise.siretNumberEnterprise" [(ngModel)]="enterprise.siretNumberEnterprise">
+    </div>
+    <div class="form-group">
+      <label>Le nom de l'entreprise</label>
+      <input class="form-control" placeholder="ex:Nike" name="enterprise.nomEntreprise" [(ngModel)]="enterprise.nameEnterprise" required>
+    </div>
+    <div class="form-group">
+      <label>Le type de l'entreprise</label>
+      <input class="form-control" placeholder="ex:magasin de vetement" name="enterprise.typeEnterprise" [(ngModel)]="enterprise.typeEnterprise">
+      <p class="help-block">Le type est consideré comme une catégorie pour classification...</p>
+    </div>
+    <div class="form-group">
+      <label>Description d'entreprise</label>
+      <textarea class="form-control" rows="3" name="enterprise.hiddenInfos" [(ngModel)]="enterprise.hiddenInfos"></textarea>
+    </div>
+    <div  class="col-lg-5 thumbnail logo-enterprise">
+      <img id="preview" src="http://placehold.it/350x150">
+    </div>
+    <div class="col-lg-8 form-group">
+    <input  type="file"  (change)="onInputFileChange($event)">
+    </div>
+  </form>
+</div>
+
+<div class="col-lg-6">
+  <form role="form">
+
+    <div class="form-group">
+      <label>Un pseudo pour l'utilisateur</label>
+      <input class="form-control" placeholder="ex:nikenikepass" name="user.pseudoUser" [(ngModel)]="user.pseudoUser">
+      <p class="help-block">L'utilisateur l'utlisera pour s'authentifier.</p>
+    </div>
+    <div class="form-group">
+      <label>Un password pour l'utilisateur</label>
+      <input class="form-control" placeholder="ex:1E1!%7BB!!64ec#" name="user.passwordUser" [(ngModel)]="user.passwordUser">
+      <p class="help-block">L'utilisateur l'utlisera pour s'authentifier.</p>
+    </div>
+    <div class="form-group">
+      <label>Un email pour l'utilisateur</label>
+      <input class="form-control" placeholder="entreprise.contact@gmail.com" name="user.emailUser" [(ngModel)]="user.emailUser">
+      <p class="help-block">L'utilisateur reçoit des emails sur cette adresse</p>
+    </div>
+
+    <div class="form-group">
+      <label>Description Utilisateur</label>
+      <textarea class="form-control" rows="3" name="user.hiddenInfos" [(ngModel)]="user.hiddenInfos"></textarea>
+    </div>
+
+    <!--<fieldset disabled=>-->
+    <fieldset>
+      <button type="submit" class="btn btn-primary" (click)="createUserEnterpriseProfile(enterprise,user)">Disabled Button</button>
+    </fieldset>
+
+  </form>
+
+</div>
+

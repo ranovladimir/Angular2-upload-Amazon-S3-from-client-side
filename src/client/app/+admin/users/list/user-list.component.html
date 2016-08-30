@@ -1,0 +1,50 @@
+<style> li {
+  cursor: pointer;
+}
+</style>
+<h2>Liste des utilisateurs</h2>
+<div class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Pseudo</th>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Password</th>
+      <th>Email</th>
+      <th>Entreprise</th>
+      <th>Date de creation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr (click)="navigateToDetail()" *ngFor="let user of users">
+      <td>{{user.idUser}}</td>
+      <td>{{user.pseudoUser}}</td>
+      <td>{{user.nomUser}}</td>
+      <td>{{user.prenomUser}}</td>
+      <td>{{user.passwordUser}}</td>
+      <td>{{user.emailUser}}</td>
+      <td>{{user.entrepriseUser}}</td>
+      <td>{{user.createdAt}}</td>
+      <td></td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+ <ul class="pagination">
+  <li *ngIf="currentPage>1"><a (click)="previous()">&lt;</a></li>
+  <li *ngIf="currentPage>2"><a (click)="previous(2)">{{currentPage-2}}</a></li>
+  <li *ngIf="currentPage>1"><a (click)="previous()">{{currentPage-1}}</a></li>
+  <li class="active"><a>{{currentPage}}</a></li>
+  <li *ngIf="currentPage<totalPage"><a (click)="next()">{{currentPage+1}}</a></li>
+  <li *ngIf="currentPage<totalPage-1"><a (click)="next(2)">{{currentPage+2}}</a></li>
+  <li *ngIf="currentPage<totalPage"><a (click)="next()">&gt;</a></li>
+  <!--<li><a [routerLink]="['/admin/user', {page:'page0'}]">&gt;</a></li>-->
+</ul>
+page:{{page}} {{totalPage}}
+
+
+
+
